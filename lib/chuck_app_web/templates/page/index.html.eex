@@ -1,8 +1,17 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Chuck API" %></h2>
-  <p class="lead">Info will be updated each 5 min using channels</p>
-</div
+  <h2><%= gettext "Welcome to %{name}!", name: "Chuck APP" %></h2>
+  <p class="lead">Random jokes from <%= link("https://api.chucknorris.io", to: "https://api.chucknorris.io") %> </p>
+</div>
 <div>
-  <%= inspect jokes %>
+  <%= for joke <- jokes() do %>
+    <div>
+      <frameset>
+        <legend><%= elem(joke, 0) %></legend>
+        <div>
+          <p><%= elem(joke, 1) %></p>
+        </div>
+      </frameset>
+    </div>
+  <% end %>
 </div>
 
