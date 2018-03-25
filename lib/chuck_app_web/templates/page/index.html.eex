@@ -3,10 +3,14 @@
   <p class="lead">Random jokes from <%= link("https://api.chucknorris.io", to: "https://api.chucknorris.io") %> </p>
 </div>
 <div>
+  <img class="small" src="https://assets.chucknorris.host/img/chucknorris_logo_coloured_small@2x.png" alt="chuck image" >
+  <p>Logo and Info of ChuckNorris has been taken from <%= link("https://api.chucknorris.io", to: "https://api.chucknorris.io") %> </p>
+</div>
+<div>
   <%= for joke <- jokes() do %>
     <div>
       <frameset>
-        <legend><%= elem(joke, 0) %></legend>
+        <legend><%= String.upcase elem(joke, 0) %></legend>
         <div>
           <p><%= elem(joke, 1) %></p>
         </div>

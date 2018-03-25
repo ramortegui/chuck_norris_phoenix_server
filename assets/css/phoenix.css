@@ -75,3 +75,7 @@ body, form, ul, table {
     border-bottom: 0;
   }
 }
+
+img.small {
+  width: 200px
+}
